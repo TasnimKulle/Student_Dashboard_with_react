@@ -1,5 +1,5 @@
 import React from "react";
-import { courses, states } from "./student";
+import {announcements, assignments, courses, states } from "./student";
 
 export const StudentDash = () => {
   return (
@@ -84,11 +84,43 @@ export const StudentDash = () => {
           </div>
           {/* side bar */}
           <div className="space-y-6">
-            <div>
-              <h1>Up Coming Assignment</h1>
+             {/* Upcoming Assignments */}
+            <div className="bg-white rounded-xl shadow-sm p-6">
+
+              <h2 className="text-lg font-semibold text-gray-800 mb-4">Up Coming Assignment</h2>
+             <div className="space-y-4">
+              {
+                assignments.map(assignment=>(
+                  <div key={assignment.id} className="flex justify-between items-center">
+                    <div>
+                      <h2 className="font-medium text-gray-800">{assignment.title}</h2>
+                      <p className="text-gray-500 text-sm">{assignment.course}</p>
+                    </div>
+                    <div className="text-right">
+                      <span className={`inline-flex items-center px-2.5 py-0.5 font-medium rounded-full text-xs ${assignment.status === 'completed'? 'bg-green-100 text-green-800' : assignment.status==='in-progress'?' bg-yellow-100 text-yellow-800'
+                        :'bg-red-100 text-red-800' }`}>{assignment.status}</span>
+                      <p className="text-xs">{assignment.dueDate}</p>
+                    </div>
+
+                  </div>
+                ))
+              }
+             </div>
             </div>
-            <div>
-              <h1>Announcements</h1>
+            {/* announcements sections  */}
+            <div className="bg-white rounded-xl shadow-sm p-6">
+              <h1 className="text-lg font-semibold text-gray-800 mb-4">Announcements</h1>
+               <div className="space-y-4">
+              {
+                announcements.map(announcement=>(
+                  <div key={announcement.id} className="border-l-4 border-blue-600 pl-4">
+                    <h2 className="font-medium text-gray-800">{announcement.title}</h2>
+                    <p className="text-gray-500 text-sm mt-1">{announcement.message}</p>
+                    <span className="text-xs text-gray-400">{announcement.time}</span>
+                  </div>
+                ))
+              }
+              </div>
             </div>
           </div>
         </div>

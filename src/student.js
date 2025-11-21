@@ -9,3 +9,13 @@ export const courses = [
     { id: 2, name: 'JavaScript Advanced', progress: 45, instructor: 'Mike Johnson', nextLesson: 'Async/Await', color: 'purple' },
     { id: 3, name: 'UI/UX Design', progress: 90, instructor: 'Emily Chen', nextLesson: 'Color Theory', color: 'pink' },
   ]; 
+  export const assignments = [
+    { id: 1, title: 'Build a Todo App', course: 'React Fundamentals', dueDate: '2025-11-12', status: 'pending' },
+    { id: 2, title: 'API Integration', course: 'JavaScript Advanced', dueDate: '2025-07-18', status: 'completed' },
+    { id: 3, title: 'Design System', course: 'UI/UX Design', dueDate: '2025-12-25', status: 'in-progress' },
+  ];
+
+ export const announcements = [
+    { id: 1, title: 'New Course Available', message: 'Check out our new TypeScript course!', time: '2 hours ago' },
+    { id: 2, title: 'Maintenance Notice', message: 'Platform updates scheduled for tonight', time: '5 hours ago' },
+  ];
