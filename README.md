@@ -5,4 +5,4 @@ A responsive Student Dashboard built with React and Tailwind CSS that displays c
 🌐 Live Demo
 
 View the project live here:
-👉 
+👉 https://student-dashboard-with-react.vercel.app/
